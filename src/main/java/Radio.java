@@ -1,11 +1,6 @@
 public class Radio {
-    public int currentStationNumber; // Номер текущей радиостанции
-    public int currentVolumeLevel;   // Уровень громкости
-
-    public Radio() {
-        this.currentStationNumber = 0;
-        this.currentVolumeLevel = 0;
-    }
+    private int currentStationNumber; // Номер текущей радиостанции
+    private int currentVolumeLevel;   // Уровень громкости
 
     // Получение текущего номера радиостанции
     public int getCurrentStationNumber() {
@@ -18,25 +13,25 @@ public class Radio {
     }
 
     // Установка новой радиостанции
-    public void setCurrentStationNumber(int station) {
-        if (station < 0) {
+    public void setCurrentStationNumber(int newCurrentStationNumber) {
+        if (newCurrentStationNumber < 0) {
             return;
         }
-        if (station > 9) {
+        if (newCurrentStationNumber > 9) {
             return;
         }
-        currentStationNumber = station;
+        currentStationNumber = newCurrentStationNumber;
     }
 
     // Установка нового уровня громкости
-    public void setCurrentVolumeLevel(int volume) {
-        if (volume < 0) {
+    public void setCurrentVolumeLevel(int newCurrentVolumeLevel) {
+        if (newCurrentVolumeLevel < 0) {
             return;
         }
-        if (volume > 100) {
+        if (newCurrentVolumeLevel > 100) {
             return;
         }
-        currentVolumeLevel = volume;
+        currentVolumeLevel = newCurrentVolumeLevel;
     }
 
     // Переключение на следующую радиостанцию
