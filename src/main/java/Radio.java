@@ -1,13 +1,35 @@
 public class Radio {
     private int currentStationNumber; // Номер текущей радиостанции
-    private int currentVolumeLevel;   // Уровень громкости
+    private int currentVolumeLevel; // Уровень громкости
+    private int stationCount; // Количество станций
 
-    // Получение текущего номера радиостанции
+    // Конструктор по умолчанию
+    public Radio() {
+        this.stationCount = 10;
+        this.currentStationNumber = 0;
+        this.currentVolumeLevel = 0;
+    }
+
+    // Конструктор с параметром
+    public Radio(int stationCount) {
+        if (stationCount <= 0) {
+            this.stationCount = 10;
+        } else {
+            this.stationCount = stationCount;
+        }
+        this.currentStationNumber = 0;
+        this.currentVolumeLevel = 0;
+    }
+
+    // Гетеры
+    public int getStationCount() {
+        return stationCount;
+    }
+
     public int getCurrentStationNumber() {
         return currentStationNumber;
     }
 
-    // Получение текущего уровня громкости
     public int getCurrentVolumeLevel() {
         return currentVolumeLevel;
     }
@@ -17,7 +39,7 @@ public class Radio {
         if (newCurrentStationNumber < 0) {
             return;
         }
-        if (newCurrentStationNumber > 9) {
+        if (newCurrentStationNumber > stationCount) {
             return;
         }
         currentStationNumber = newCurrentStationNumber;
@@ -36,7 +58,7 @@ public class Radio {
 
     // Переключение на следующую радиостанцию
     public void nextStation() {
-        if (currentStationNumber == 9) {
+        if (currentStationNumber == stationCount - 1) {
             currentStationNumber = 0;
         } else {
             currentStationNumber++;
@@ -46,7 +68,7 @@ public class Radio {
     // Переключение на предыдущую радиостанцию
     public void previousStation() {
         if (currentStationNumber == 0) {
-            currentStationNumber = 9;
+            currentStationNumber = stationCount - 1;
         } else {
             currentStationNumber--;
         }
