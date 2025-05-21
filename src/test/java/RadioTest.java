@@ -6,7 +6,7 @@ public class RadioTest {
     @Test
     public void testDefaultConstructor() {
         Radio radio = new Radio(10);
-        Assertions.assertEquals(10, radio.getStationCount());
+        Assertions.assertEquals(9, radio.getStationCount());
         Assertions.assertEquals(0, radio.getCurrentStationNumber());
         Assertions.assertEquals(0, radio.getCurrentVolumeLevel());
     }
@@ -14,7 +14,7 @@ public class RadioTest {
     @Test
     public void testStation() {
         Radio radio = new Radio(15);
-        Assertions.assertEquals(15, radio.getStationCount());
+        Assertions.assertEquals(14, radio.getStationCount());
         Assertions.assertEquals(0, radio.getCurrentStationNumber());
 
         // Установка новой радиостанции

@@ -15,7 +15,7 @@ public class Radio {
         if (stationCount <= 0) {
             this.stationCount = 10;
         } else {
-            this.stationCount = stationCount;
+            this.stationCount = stationCount - 1;
         }
         this.currentStationNumber = 0;
         this.currentVolumeLevel = 0;
@@ -58,7 +58,7 @@ public class Radio {
 
     // Переключение на следующую радиостанцию
     public void nextStation() {
-        if (currentStationNumber == stationCount - 1) {
+        if (currentStationNumber == stationCount) {
             currentStationNumber = 0;
         } else {
             currentStationNumber++;
@@ -68,7 +68,7 @@ public class Radio {
     // Переключение на предыдущую радиостанцию
     public void previousStation() {
         if (currentStationNumber == 0) {
-            currentStationNumber = stationCount - 1;
+            currentStationNumber = stationCount;
         } else {
             currentStationNumber--;
         }
